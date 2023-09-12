@@ -15,6 +15,7 @@ class FeaturedListViewItem extends StatelessWidget {
             16,
           ),
           image: const DecorationImage(
+            fit: BoxFit.fill,
             image: NetworkImage(
                 'https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/6408f676b5811234c887ca62_top%20gun%20maverick-min.png'),
           ),
