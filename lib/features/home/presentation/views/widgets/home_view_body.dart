@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/Featured_books_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/Featured_list_view_item.dart';
 import 'package:flutter/material.dart';
@@ -67,78 +68,40 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 30,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  child: const Text(
-                    'Harry Potter and the Goblet of Fire ',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: 'GT_Sectra',
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 30,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    child: Text(
+                      'Harry Potter and the Goblet of Fire ',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: Styles.textStyle20.copyWith(
+                        fontFamily: 'GT_Sectra',
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 3,
-                ),
-                Text(
-                  'J.K. Rowling',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color(0xffB7B6BC),
+                  const SizedBox(
+                    height: 3,
                   ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      '19.99 €',
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
+                  Text(
+                    'J.K. Rowling',
+                    style: Styles.textStyle14.copyWith(
+                      color: const Color(0xffB7B6BC),
                     ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Icon(
-                      Icons.star,
-                      size: 18,
-                      color: Colors.amber,
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text(
-                      '4.8',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text(
-                      '(2390)',
-                      style: TextStyle(
-                        color: Color(0xff84818C),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                      ),
-                    )
-                  ],
-                )
-              ],
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  BookRating()
+                ],
+              ),
             ),
           )
         ],
