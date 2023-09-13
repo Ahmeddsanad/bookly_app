@@ -21,8 +21,8 @@ class HomeViewBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(
               top: 30,
-              left: 26,
-              bottom: 15,
+              left: 30,
+              bottom: 20,
             ),
             child: Text(
               'Best Seller',
@@ -45,7 +45,7 @@ class BestSellerListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 24,
+        horizontal: 30,
       ),
       child: Row(
         children: [
@@ -67,20 +67,23 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(
-              left: 20,
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 30,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Harry Potter \nand the Goblet of Fire',
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'GT_Sectra',
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: const Text(
+                    'Harry Potter and the Goblet of Fire ',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'GT_Sectra',
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -105,7 +108,7 @@ class BestSellerListViewItem extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 90,
+                      width: 30,
                     ),
                     Icon(
                       Icons.star,
