@@ -3,24 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
-  BookRating({super.key, this.isHomeView});
+  BookRating({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+  });
 
-  bool? isHomeView = true;
+  MainAxisAlignment? mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
       children: [
-        if (isHomeView == true)
-          Text(
-            '19.99 €',
-            style: Styles.textStyle20.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          )
-        else
-          Container(),
-        if (isHomeView == true) Spacer(),
         const Icon(
           FontAwesomeIcons.solidStar,
           size: 14,

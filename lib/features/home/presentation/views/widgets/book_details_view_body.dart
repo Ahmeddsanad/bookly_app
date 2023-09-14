@@ -52,7 +52,7 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 16,
           ),
           BookRating(
-            isHomeView: false,
+            mainAxisAlignment: MainAxisAlignment.center,
           ),
         ],
       ),

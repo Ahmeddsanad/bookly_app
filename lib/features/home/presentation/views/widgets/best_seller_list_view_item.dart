@@ -71,8 +71,19 @@ class BestSellerListViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    BookRating(
-                      isHomeView: true,
+                    Row(
+                      children: [
+                        Text(
+                          '19.99 €',
+                          style: Styles.textStyle20.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Spacer(),
+                        BookRating(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                        ),
+                      ],
                     ),
                   ],
                 ),
