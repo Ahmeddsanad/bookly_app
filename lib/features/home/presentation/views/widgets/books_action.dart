@@ -7,37 +7,42 @@ class BooksAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: CustomButton(
-            bColor: Colors.white,
-            borderRadiusGeometry: const BorderRadius.only(
-              topLeft: Radius.circular(16),
-              bottomLeft: Radius.circular(16),
-            ),
-            text: '19.99€',
-            textStyle: Styles.textStyle20.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.w900,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 8.0,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: CustomButton(
+              bColor: Colors.white,
+              borderRadiusGeometry: const BorderRadius.only(
+                topLeft: Radius.circular(16),
+                bottomLeft: Radius.circular(16),
+              ),
+              text: '19.99€',
+              textStyle: Styles.textStyle20.copyWith(
+                color: Colors.black,
+                fontWeight: FontWeight.w900,
+              ),
             ),
           ),
-        ),
-        Expanded(
-          child: CustomButton(
-            bColor: const Color(0xFFEF8262),
-            borderRadiusGeometry: const BorderRadius.only(
-              topRight: Radius.circular(16),
-              bottomRight: Radius.circular(16),
+          Expanded(
+            child: CustomButton(
+              bColor: const Color(0xFFEF8262),
+              borderRadiusGeometry: const BorderRadius.only(
+                topRight: Radius.circular(16),
+                bottomRight: Radius.circular(16),
+              ),
+              textStyle: Styles.textStyle18.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+              ),
+              text: 'Free preview',
             ),
-            textStyle: Styles.textStyle18.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.w900,
-            ),
-            text: 'Free preview',
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
