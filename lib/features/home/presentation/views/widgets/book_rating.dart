@@ -3,21 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({
-    super.key,
-  });
+  BookRating({super.key, this.isHomeView});
+
+  bool? isHomeView = true;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          '19.99 €',
-          style: Styles.textStyle20.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const Spacer(),
+        if (isHomeView == true)
+          Text(
+            '19.99 €',
+            style: Styles.textStyle20.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        else
+          Container(),
+        if (isHomeView == true) Spacer(),
         const Icon(
           FontAwesomeIcons.solidStar,
           size: 14,

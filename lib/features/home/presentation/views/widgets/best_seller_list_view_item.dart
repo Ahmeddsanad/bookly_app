@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
@@ -64,13 +65,15 @@ class BestSellerListViewItem extends StatelessWidget {
                     Text(
                       'J.K. Rowling',
                       style: Styles.textStyle14.copyWith(
-                        color: const Color(0xffB7B6BC),
+                        color: kAuthorColor,
                       ),
                     ),
                     const SizedBox(
                       height: 3,
                     ),
-                    const BookRating(),
+                    BookRating(
+                      isHomeView: true,
+                    ),
                   ],
                 ),
               ),
