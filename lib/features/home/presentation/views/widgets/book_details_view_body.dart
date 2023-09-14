@@ -26,7 +26,7 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 20,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * 0.17),
+            padding: EdgeInsets.symmetric(horizontal: width * 0.2),
             child: const CustomBookImage(),
           ),
           const SizedBox(
@@ -39,10 +39,13 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 6,
           ),
-          Text(
-            'Rudyard Kipling',
-            style: Styles.textStyle18.copyWith(
-              color: kAuthorColor,
+          Opacity(
+            opacity: 0.7,
+            child: Text(
+              'Rudyard Kipling',
+              style: Styles.textStyle18.copyWith(
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
           const SizedBox(
