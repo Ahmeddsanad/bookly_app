@@ -6,14 +6,14 @@ class ApiService {
   final String _BaseURL = 'https://www.googleapis.com/books/v1/';
   // final String _param = 'volumes';
 
-  final Dio dio;
+  final Dio _dio;
 
   ApiService(
-    this.dio,
+    this._dio,
   );
 
   Future<Map<String, dynamic>> get({required String endPoint}) async {
-    var response = await dio.get('$_BaseURL$endPoint');
+    var response = await _dio.get('$_BaseURL$endPoint');
 
     return response.data;
   }
