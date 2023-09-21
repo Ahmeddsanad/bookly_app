@@ -16,14 +16,18 @@ class FeaturedBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * 0.3,
             child: ListView.builder(
+              itemCount: state.books.length,
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.only(
+                return Padding(
+                  padding: const EdgeInsets.only(
                     left: 26,
                   ),
-                  child: CustomBookImage(),
+                  child: CustomBookImage(
+                      imageUrl: state
+                              .books[index].volumeInfo.imageLinks?.thumbnail ??
+                          'https://books.goalkicker.com/DotNETFrameworkBook/DotNETFrameworkGrow.png'),
                 );
               },
             ),

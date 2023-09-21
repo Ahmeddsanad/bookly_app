@@ -31,7 +31,10 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.2),
-                  child: const CustomBookImage(),
+                  child: CustomBookImage(
+                    imageUrl:
+                        'https://books.goalkicker.com/DotNETFrameworkBook/DotNETFrameworkGrow.png',
+                  ),
                 ),
                 const SizedBox(
                   height: 30,

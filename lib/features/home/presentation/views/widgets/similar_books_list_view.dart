@@ -14,7 +14,10 @@ class SimilarBooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => const Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.0),
-          child: CustomBookImage(),
+          child: CustomBookImage(
+            imageUrl:
+                'https://books.goalkicker.com/DotNETFrameworkBook/DotNETFrameworkGrow.png',
+          ),
         ),
         // separatorBuilder: (context, index) => const SizedBox(
         //   width: 5,
