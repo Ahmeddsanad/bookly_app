@@ -39,6 +39,8 @@ class ServerFailure extends Failure {
       return ServerFailure('Your Request not found, please try again later.');
     } else if (statusCode == 500) {
       return ServerFailure('Internal Server error, please try again later.');
+    } else if (statusCode == 429) {
+      return ServerFailure('Queries per day Exceeded, please try again later.');
     } else {
       return ServerFailure('Oops There was an error, please try again.');
     }
