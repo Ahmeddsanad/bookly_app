@@ -38,6 +38,8 @@ class HomeViewBody extends StatelessWidget {
         ),
         //SliverToBoxAdapter and put shrikwrap
         SliverFillRemaining(
+          // hasScrollBody: true,
+          // fillOverscroll: true,
           child: BestSellerListView(),
         ),
       ],
