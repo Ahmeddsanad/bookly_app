@@ -1,9 +1,13 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/utils/widgets/custom_button.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
+  const BooksAction({super.key, required this.bookModel});
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class BooksAction extends StatelessWidget {
                 topLeft: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
-              text: '19.99€',
+              text: 'Free',
               textStyle: Styles.textStyle20.copyWith(
                 color: Colors.black,
                 fontWeight: FontWeight.w900,
@@ -29,6 +33,12 @@ class BooksAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
+              onPressed: () async {
+                Uri url = Uri.parse(bookModel.volumeInfo.previewLink!);
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                } else {}
+              },
               bColor: const Color(0xFFEF8262),
               borderRadiusGeometry: const BorderRadius.only(
                 topRight: Radius.circular(16),
