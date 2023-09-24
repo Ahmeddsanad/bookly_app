@@ -1,16 +1,16 @@
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/Featured_books_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
@@ -37,11 +37,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         //SliverToBoxAdapter and put shrikwrap
-        SliverFillRemaining(
-          // hasScrollBody: true,
-          // fillOverscroll: true,
-          child: BestSellerListView(),
-        ),
+        BestSellerListView(),
       ],
     );
   }
